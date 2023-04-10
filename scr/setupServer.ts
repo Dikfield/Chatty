@@ -20,10 +20,8 @@ import Logger from 'bunyan';
 import 'express-async-errors';
 import { config } from './config';
 import appRoutes from './routes';
-import {
-  CustomError,
-  IErrorResponse,
-} from './shared/globals/helpers/errorHandler';
+import { IErrorResponse, CustomError } from './shared/globals/helpers/errorHandler';
+
 
 const log: Logger = config.createLogger('server');
 
@@ -128,5 +126,7 @@ export class ChattyServer {
     });
   }
 
-  private scoketIoConnections(io: Server): void {}
+  private scoketIoConnections(io: Server): void {
+    log.info('socketIOConnections');
+  }
 }

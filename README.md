@@ -1,0 +1,1 @@
+Chatty project developed with the purpose of typescript, NodeJS and React Learning.

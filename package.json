@@ -5,13 +5,15 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon -r tsconfig-paths/register scr/app.ts | bunyan",
-    "prod": "SET NODE_ENV=production&&nodemon -r tsconfig-paths/register scr/app.ts"
+    "prod": "SET NODE_ENV=production&&nodemon -r tsconfig-paths/register scr/app.ts",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@socket.io/redis-adapter": "^8.1.0",
+    "bullmq": "^3.10.4",
     "bunyan": "^1.8.15",
     "compression": "^1.7.4",
     "cookie-session": "^2.0.0",
@@ -27,7 +29,8 @@
     "redis-adapter": "^0.2.0",
     "socket.io": "^4.6.1",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "typescript-transform-paths": "^3.4.6"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.8",
@@ -36,6 +39,8 @@
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/hpp": "^0.2.2",
+    "@types/redis-info": "^3.0.0",
+    "tsc-alias": "^1.8.5",
     "tsconfig-paths": "^4.2.0"
   }
 }
